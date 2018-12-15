@@ -1,0 +1,26 @@
+i=raw_input()
+i=i.split(':')
+ih=int(i[0])
+im=int(i[1])
+f=raw_input().split(':')
+fh=int(f[0])
+fm=int(f[1])
+dh=ih-fh
+if dh<0:
+    dh=24+dh
+dm=im-fm
+if dm<0:
+    dm=dm+60
+    dh=dh-1
+    if dh<0:
+        dh=24+dh
+
+if dh/10==0:
+    dh="0"+str(dh)
+else:
+    dh=str(dh)
+if dm/10==0:
+    dm="0"+str(dm)
+else:
+    dm=str(dm)
+print dh+":"+dm

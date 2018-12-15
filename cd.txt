@@ -1,0 +1,33 @@
+t=input()
+i=0
+while i<t:
+    n=input()
+    arr=[]
+    x=raw_input()
+    x=x.split(' ')
+    y=raw_input()
+    y=y.split(' ')
+    arr.append(x[0])
+    arr.append(y[0])
+    print arr
+    j=1
+    while 1:
+        if x.count(arr[j])>0:
+            ind=x.index(arr[j])
+            arr.append(y[ind])
+            j=j+1
+        else:
+            arr.reverse()
+            if y.count(arr[j])>0:
+                ind=y.index(arr[j])
+                arr.append(x[ind])
+                j=j+1
+                arr.reverse()
+            else:
+                break
+    j=0
+    print arr
+    i=i+1
+
+              
+            

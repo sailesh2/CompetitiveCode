@@ -1,0 +1,71 @@
+t=input()
+i=0
+while i<t:
+    n=input()
+    j=0
+    crx=[0]*100000000
+    ctrx=0
+    drx=[0]*1000000
+    xarr=[[0]*100]*10000000
+    cry=[0]*100000000
+    ctry=0
+    dry=[0]*1000000
+    yarr=[[0]*100]*10000000
+    s=0
+    while j<n:
+        a=raw_input().strip()
+        b=a.split(' ')
+        x=int(b[0])
+        y=int(b[1])
+        if crx[x]==0:
+            drx[ctrx]=x
+            ctrx=ctrx+1
+        xarr[x][crx[x]]=y
+        crx[x]=crx[x]+1
+        if cry[y]==0:
+            dry[ctry]=y
+            ctry=ctry+1
+        yarr[y][cry[y]]=x
+        cry[y]=cry[y]+1
+        j=j+1
+    while 1:
+        cnt=0
+        if ctrx<ctry:
+            maxi=0
+            j=0
+            while j<ctrx:
+                if crx[drx[j]]>0:
+                    cnt=1
+                if crx[drx[i]]>=maxi:
+                    maxi=crx[drx[i]]
+                    save=drx[i]
+                j=j+1
+            j=0
+            while j<crx[save]:
+                cry[xarr[save][j]]=cry[xarr[save][j]]-1
+                if cry[xarr[save][j]]==0:
+                    ctry=ctry-1
+                j=j+1
+            crx[save]=0
+        else:
+            maxi=0
+            j=0
+            while j<ctry:
+                if cry[dry[j]]>0:
+                    cnt=1
+                if cry[dry[i]]>=maxi:
+                    maxi=cry[dry[i]]
+                    save=dry[i]
+                j=j+1
+            j=0
+            while j<cry[save]:
+                crx[yarr[save][j]]=crx[yarr[save][j]]-1
+                if crx[yarr[save][j]]==0:
+                    ctrx=ctrx-1
+                j=j+1
+            cry[save]=0
+        if cnt==0:
+            break
+        s=s+1
+    print s
+    i=i+1

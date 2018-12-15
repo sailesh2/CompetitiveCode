@@ -1,0 +1,33 @@
+b=raw_input().split(' ')
+a=float(b[0])
+d=float(b[1])
+n=input()
+i=0
+while i<n:
+    u=d/a
+    f=str(u).split('.')
+    ist=int(f[0])
+    rem=int(f[1])
+    v=(float(rem)/10**len(f[1]))*a
+    w=ist%4
+    print v
+    print w
+    if w==0:
+        x=0+v
+        y=0
+        print x,y
+    if w==1:
+        x=a
+        y=0+v
+        print x,y
+    if w==2:
+        x=a-v
+        y=a
+        print x,y
+    if w==3:
+        x=0
+        y=a-v
+        print x,y
+    d=d+d
+    i=i+1
+            

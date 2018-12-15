@@ -1,0 +1,56 @@
+global sm
+global cnt
+global n
+global m
+def fun(i,su,ctr,arr,c,p):
+    global sm
+    global cnt
+    global n
+    global m
+    if ctr>=m:
+        cnt=cnt+1
+        sm=sm+su
+    j=i
+    while j<n:
+        if n-j>=m-ctr:
+            if ctr<m:
+                if arr[c[j]]==0:
+                    arr[c[j]]=1
+                    fun(j+1,su+p[j],ctr+1,arr,c,p)
+                    arr[c[j]]=0
+                else:
+                    fun(j+1,su+p[j],ctr,arr,c,p)
+            else:
+                fun(j+1,su+p[j],ctr+1,arr,c,p)
+        else:
+            return
+        j=j+1
+t=input()
+ans=[]
+i=0
+while i<t:
+    x=raw_input().split(' ')
+    global n
+    global m
+    n=int(x[0])
+    m=int(x[1])
+    j=0
+    c=[]
+    p=[]
+    global sm
+    global cnt
+    sm=0
+    cnt=0
+    while j<n:
+        y=raw_input().split(' ')
+        c.append(int(y[0]))
+        p.append(int(y[1]))
+        j=j+1
+    arr=[0]*45
+    fun(0,0,0,arr,c,p)
+    ans.append(float(sm)/cnt)
+    i=i+1
+i=0
+while i<t:
+    print "%.9f"%ans[i]
+    i=i+1

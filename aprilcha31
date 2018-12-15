@@ -1,0 +1,46 @@
+x=raw_input().split(' ')
+n=int(x[0])
+m=int(x[1])
+arr=[0]*100001
+crr=[0]*10
+brr = [[0 for x in xrange(100001)] for x in xrange(10)]
+y=raw_input()
+i=0
+arr=[]
+print len(y)
+while i<n:
+    arr.append(int(y[i]))
+    i=i+1
+i=0
+while i<n:
+    j=0
+    while j<10:
+        brr[i][j]=crr[j];
+        j=j+1
+    if i>0:
+        brr[i][arr[i-1]]=brr[i][arr[i-1]]+1
+        crr[arr[i-1]]=crr[arr[i-1]]+1
+    i=i+1
+i=0
+ans=[]
+while i<m:
+    ctra=0
+    ctrb=0
+    sma=0
+    smb=0
+    j=0
+    num=input()
+    while j<10:
+        if j<=arr[num-1]:
+            ctra=ctra+brr[num-1][j]
+            sma=sma+brr[num-1][j]*j
+        else:
+            ctrb=ctrb+brr[num-1][j]
+            smb=smb+brr[num-1][j]*j
+        j=j+1
+    ans.append(arr[num-1]*ctra-sma+smb-arr[num-1]*ctrb)
+    i=i+1
+i=0
+while i<m:
+    print ans[i]
+    i=i+1

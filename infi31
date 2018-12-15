@@ -1,0 +1,71 @@
+x=raw_input().split(' ')
+n=int(x[0])
+q=int(x[1])
+y=raw_input().split(' ')
+arr=[]
+i=0
+while i<n:
+    arr.append(int(y[i]))
+    i=i+1
+arr.sort()
+i=2
+ans1=arr[1]-arr[0]
+while i<n:
+        on=ans1
+        to=arr[i]-arr[i-1]
+        if on==0 and to>0:
+            ans1=to
+        elif on>0 and to==0:
+            ans1=on
+        elif on==0 and to==0:
+            ans1=0
+        else:
+            if on>to:
+                while 1:
+                    if on%to==0:
+                        ans1=to
+                        break
+                    temp=on
+                    on=to
+                    to=temp%to
+            else:
+                while 1:
+                    if to%on==0:
+                        ans1=on
+                        break
+                    temp=to
+                    to=on
+                    on=temp%on
+        i=i+1
+j=0
+while j<q:
+    inp=input()
+    on=ans1
+    to=arr[0]+inp
+    if on==0 and to>0:
+        ans=to
+    elif on>0 and to==0:
+        ans=on
+    elif on==0 and to==0:
+        ans=0
+    else:
+        if on>to:
+                while 1:
+                    if on%to==0:
+                        ans=to
+                        break
+                    temp=on
+                    on=to
+                    to=temp%to
+        else:
+                while 1:
+                    if to%on==0:
+                        ans=on
+                        break
+                    temp=to
+                    to=on
+                    on=temp%on
+            
+    print ans
+    j=j+1
+

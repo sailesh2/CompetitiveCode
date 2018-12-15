@@ -1,0 +1,28 @@
+import math
+t=input()
+i=0
+arr=[]
+while i<t:
+    x=raw_input()
+    x=x.split(' ')
+    n=int(x[0])
+    m=int(x[1])
+    j=1
+    ctr=0
+    while j<=n:
+        k=1
+        while k<=m:
+            val=(j-1)*m+k
+            val1=(k-1)*n+j
+            if val==val1:
+                ctr=ctr+1
+            k=k+1
+        j=j+1
+    arr.append(ctr)
+    i=i+1
+i=0
+while i<t:
+    print arr[i]
+    i=i+1
+
+    

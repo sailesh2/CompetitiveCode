@@ -1,0 +1,35 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+    long double i=0,n,t,j,s;
+    cin>>t;
+    for(;i<n;i++)
+    {
+        cin>>n;
+        for(j=0,s=0;j<n;j++)
+        {
+            s=s+(long double)pow(-1,j)/(2*j+1);
+        }
+        cout<<s<<"\n";
+    }
+    return 0;
+}
+
+
+
+
+
+import math
+i=0
+t=input()
+while i<t:
+    s=0
+    j=0
+    x=input()
+    while j<x:
+        s=s+float(pow(-1,j))/(2*j+1)
+        j=j+1
+    print s
+    i=i+1

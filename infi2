@@ -1,0 +1,32 @@
+import math
+t=input()
+i=0
+while i<t:
+    n=input()
+    z=5*n
+    cnt=0
+    lt=list()
+    while 1:
+        k=5
+        sm=0
+        if lt.count(z)==1:
+            if prev>z:
+                ans=prev
+            else:
+                ans=z
+            break
+        while k<=z:
+            sm=sm+int(math.floor(float(z)/k))
+            k=k*5
+        lt.append(z)
+        if sm==n:
+            ans=z
+            break
+        elif sm>n:
+            prev=z
+            z=z-(sm-n)*5
+        else:
+            prev=z
+            z=z+(n-sm)*5
+    print ans
+    i=i+1

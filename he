@@ -1,0 +1,48 @@
+pr=[2]
+i=3
+k=1
+while i<100000:
+    j=0
+    cnt=0
+    while j<k:
+        if pr[j]>i**0.5:
+            break
+        if i%pr[j]==0:
+            cnt=1
+            break
+        j=j+1
+    if cnt==0:
+        pr.append(i)
+        k=k+1
+    i=i+2
+
+t=input()
+i=0
+arr=[]
+while i<t:
+    n=input()
+    tot=n+n-1
+    j=3
+    ctr=0
+    while j<=n:
+        d=j-1
+        cnt=0
+        x=j*j
+        x=x-d
+        if pr.count(x)==1:
+            ctr=ctr+1
+            
+        x=x-d
+        if pr.count(x)==1:
+            ctr=ctr+1
+
+        x=x-d
+        if pr.count(x)==1:
+            ctr=ctr+1
+        j=j+2
+    arr.append(round(((float(ctr)/tot)*100),6))
+    i=i+1
+i=0
+while i<t:
+    print arr[i]
+    i=i+1

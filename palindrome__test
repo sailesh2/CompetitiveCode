@@ -1,0 +1,4 @@
+inp=raw_input('enter')
+rever=inp.reverse()
+if inp==rever:
+      print 'palindrome'

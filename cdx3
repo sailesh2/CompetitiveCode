@@ -1,0 +1,19 @@
+import math
+t=input()
+i=0
+while i<t:
+    x=raw_input()
+    x=x.split(' ')
+    n=int(x[0])
+    m=int(x[1])
+    j=1
+    ctr=0
+    while j<=(m*n):
+        r=int(math.ceil(float(j)/n))
+        r1=int(math.ceil(float(j)/m))
+        if r==(j%m+int(j/(m*r1))*m) and (j%n+int(j/(n*r))*n)==r1:
+            ctr=ctr+1
+        j=j+1
+    print ctr
+    i=i+1
+    

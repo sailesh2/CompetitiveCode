@@ -1,0 +1,40 @@
+x=raw_input().split(' ')
+n=int(x[0])
+k=int(x[1])
+y=raw_input().split(' ')
+i=0
+maxi=int(y[0])
+while i<n:
+    if int(y[i])>=maxi:
+        maxi=int(y[i])
+    i=i+1
+i=0
+brr=[]
+maxi2=maxi-int(y[0])
+while i<n:
+    brr.append(maxi-int(y[i]))
+    if brr[i]>=maxi2:
+        maxi2=brr[i]
+    i=i+1
+i=0
+crr=[]
+while i<n:
+    crr.append(maxi2-brr[i])
+    i=i+1
+if k==0:
+    i=0
+    while i<n:
+        print int(y[i]),
+        i=i+1
+else:
+    if k%2!=0:
+        i=0
+        while i<n:
+            print brr[i],
+            i=i+1
+    else:
+        i=0
+        while i<n:
+            print crr[i],
+            i=i+1
+        

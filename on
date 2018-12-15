@@ -1,0 +1,39 @@
+t=input()
+i=0
+while i<t:
+    x=raw_input().split(' ')
+    n=int(x[0])
+    k=int(x[1])
+    h1=[]
+    h2=[]
+    arr=[]
+    a=raw_input().split(' ')
+    j=0
+    s=0
+    while j<n:
+        h1.append(int(a[j]))
+        j=j+1
+    a=raw_input().split(' ')
+    j=0
+    while j<n:
+        h2.append(int(a[j]))
+        j=j+1
+    h1.sort()
+    h2.sort()
+    h2.reverse()
+    j=0
+    while j<n:
+        s=s+h1[j]*h2[j]
+        j=j+1
+    if s<=k:
+        arr.append("YES")
+    else:
+        arr.append("NO")
+    i=i+1
+i=0
+while i<t:
+    print arr[i]
+    i=i+1
+
+
+    

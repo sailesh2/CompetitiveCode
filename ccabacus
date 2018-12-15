@@ -1,0 +1,21 @@
+import math
+i=3
+ctr=1
+arr=[2]
+s=2
+while 1:
+    if i>=100000000000:
+        break
+    cnt=0
+    if i%2!=0:
+        j=0
+        while j<ctr and j<=pow(i,0.5):
+            if i%arr[j]==0:
+                cnt=1
+                break
+            j=j+1
+        if cnt==0:
+            arr.append(i)
+            ctr=ctr+1
+    i=i+1
+print s

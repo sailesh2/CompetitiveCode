@@ -1,0 +1,179 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int l,w,h,a,b,c,d,e,f,N,i,p,q,r,t,k,chen,sergey,cnt1,cnt2,cnt3,savp,savq,savr,ctr1,ctr2,ctr3,u,v,w;
+  cin>>t;
+  for(i=0;i<t;i++)
+    {
+    cin>>l>>w>>h>>a>>b>>c>>d>>e>>f>>p>>q>>r>>N;
+    k=(2*N)+1;
+    sergey=0;
+    if(p!=a)
+      cnt1=0;
+    else
+      cnt1=N+1;
+    if(q!=b)
+      cnt2=0;
+    else
+      cnt2=N+1;
+    if(r!=c)
+      cnt3=0;
+    else
+      cnt3=N+1;
+    for(u=-1*N;u!=cnt1 && u<=N;u++)
+      {
+      for(v=-1*N;v!=cnt2 && v<=N;v++)
+        {
+        for(w=-1*N;w!=cnt3 && w<=N;w++)
+          {
+          savp=p;
+    	  savq=q;
+    	  savr=r;
+    
+    	ctr1=1;
+    	ctr2=1;
+    	ctr3=1;
+          while(1)
+            {
+            if(savp==a && savq==b && savr==c)
+              {
+              sergey++;
+              break;
+            }
+    			if(savp==0 || savp==l)
+              		ctr1=-1*ctr1;
+          		if(savq==0 || saveq==w)
+                  ctr2=-1*ctr2;
+            	if(savr==0 || savr==h)
+                  ctr3=-1*ctr3;
+            savp=savp+(ctr1*u);
+            savq=savq+(ctr2*v);
+            savr=savr+(ctr3*w);
+         }
+      }
+    }
+    }
+    cout<<sergey<<" ";
+    
+    
+    chen=0;
+    if(p!=d)
+      cnt1=0;
+    else
+      cnt1=N+1;
+    if(q!=e)
+      cnt2=0;
+    else
+      cnt2=N+1;
+    if(r!=f)
+      cnt3=0;
+    else
+      cnt3=N+1;
+    for(u=-1*N;u!=cnt1 && u<=N;u++)
+      {
+      for(v=-1*N;v!=cnt2 && v<=N;v++)
+        {
+        for(w=-1*N;w!=cnt3 && w<=N;w++)
+          {
+          savp=p;
+    	  savq=q;
+    	  savr=r;
+    
+    	ctr1=1;
+    	ctr2=1;
+    	ctr3=1;
+          while(1)
+            {
+            if(savp==d && savq==e && savr==f)
+              {
+              chen++;
+              break;
+            }
+    			if(savp==0 || savp==l)
+              		ctr1=-1*ctr1;
+          		if(savq==0 || saveq==w)
+                  ctr2=-1*ctr2;
+            	if(savr==0 || savr==h)
+                  ctr3=-1*ctr3;
+            savp=savp+(ctr1*u);
+            savq=savq+(ctr2*v);
+            savr=savr+(ctr3*w);
+         }
+      }
+    }
+    }
+    cout<<chen<<"\n";
+  
+    return 0;
+
+
+}
+
+
+
+
+
+
+
+
+
+chen=0
+    if p!=d:
+        cnt1=0
+    else:
+        cnt1=n+1
+    if q!=e:
+        cnt2=0
+    else:
+        cnt2=n+1
+    if r!=r:
+        cnt3=0
+    else:
+        cnt3=n+1
+    u=-1*n
+    while u<=n:
+        if u==cnt1:
+            continue
+        v=-1*n;
+        while v<=n:
+            if v==cnt2:
+                continue
+            w=-1*n
+            while w<=n:
+                if w==cnt3:
+                    continue
+                savp=p
+                savq=q
+                savr=r
+                arr=[[[0]*100]*100]*100
+                ctr1=1
+                ctr2=1
+                ctr3=1
+                while 1:
+                    print savp
+                    if arr[savp][savq][savr]==2:
+                        break
+                    arr[savp][savq][savr]=arr[savp][savq][savr]+1
+                    if savp==a and savq==b and savr==c:
+                        chen=chen+1
+                        break
+                    if savp==0 or savp==l:
+                        ctr1=-1*ctr1
+                    if savq==0 or savq==wid:
+                        ctr2=-1*ctr2
+                    if savr==0 or savr==h:
+                        ctr3=-1*ctr3
+                    savp=savp+(ctr1*u)
+                    savq=savq+(ctr2*v)
+                    savr=savr+(ctr3*w)
+                w=w+1
+            v=v+1
+        u=u+1
+    ans2.append(chen)
+    

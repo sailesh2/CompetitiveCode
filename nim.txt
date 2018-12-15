@@ -1,0 +1,9 @@
+xorFinal=xor all heap sizes 
+then for each heap if sizeofheap[i] xor xorFinal<sizeofheap[i]
+	then cnt=1 break
+if cnt==1:
+	first player wins		
+else:
+	second player wins
+
+NOTE:first player that can't make any move lose.

@@ -1,0 +1,23 @@
+t=input()
+i=0
+while i<t:
+    x=raw_input()
+    y=x.split(' ')
+    a=int(y[0])
+    b=int(y[1])
+    s=bin(b)
+    k=a
+    ctr=0
+    lent=len(s)-2
+    p=1
+    if s[lent+1]=='1':
+        p=((p%1000000007)*(k%1000000007))%1000000007
+    while 1:
+        k=((k%1000000007)*(k%1000000007))%1000000007
+        ctr=ctr+1
+        if ctr==lent:
+            break
+        if s[lent+1-ctr]=='1':
+            p=(p*(k%1000000007))%1000000007
+    print p
+    i=i+1

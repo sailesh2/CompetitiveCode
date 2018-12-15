@@ -1,0 +1,18 @@
+t=input()
+x=raw_input()
+x=x.split(' ')
+i=0
+ctr=0
+while i<t:
+    if x[i]=='0':
+        ctr=ctr+1
+    i=i+1
+s=0
+i=0
+while i<t:
+    if x[i]=='0':
+        ctr=ctr-1
+    else:
+        s=s+ctr
+    i=i+1
+print s

@@ -1,0 +1,60 @@
+import java.io.*;
+import java.util.*;
+import java.math.BigInteger;
+class Solution
+{
+    public static void main(String args[])throws Exception
+    {
+        int x,y,n,p,i;
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        p=sc.nextInt();
+        String sr;
+        int arr[][]=new int[p][3];
+        BigInteger s=new BigInteger("0");
+        BigInteger rows=new BigInteger("0");
+        BigInteger cols=new BigInteger("0");
+        
+        int rowar[]=new int[n+1];
+        int colar[]=new int[n+1];
+        for(i=0;i<p;i++)
+        {
+            sr=sc.next();
+            x=sc.nextInt();
+            y=sc.nextInt();
+            arr[i][1]=x;
+            arr[i][2]=y;
+            if(sr.indexOf(0)=='R')
+            {
+                arr[i][0]=1;
+                rowar[x]=i;   
+            }
+            else
+            {
+                arr[i][0]=0;
+                colar[x]=i;
+            }
+        }
+        for(i=0;i<p;i++)
+        {
+            if(arr[i][0]==1)
+            {
+                if(rowar[arr[i][1]]==i)
+                {
+                    s=s+n*arr[i][2]-cols;
+                    rows=rows+arr[i][2];
+                }
+            }
+            else
+            {
+                if(colar[arr[i][1]]==i)
+                {
+                    int k=n*arr[i][2];
+                    s=s+BigInteger.valueOf(k.intValue())-rows;
+                    cols=cols+arr[i][2];
+                }
+            }
+        }
+        System.out.println(s);
+    }
+}

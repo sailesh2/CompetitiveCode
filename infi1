@@ -1,0 +1,22 @@
+import math
+t=input()
+i=0
+while i<t:
+    sm=0
+    n,k=map(int,raw_input().split())
+    if n*n<=4*n*k:
+        print n-1
+    else:
+        z=n*n-4*n*k
+        a=int(math.floor((n-(float(z)**0.5))/2))
+        b=int(math.ceil((n+(float(z)**0.5))/2))
+        if a>0 and a<n:
+            sm=a
+        if a>=n:
+            sm=n-1
+        if b<n and b>0:
+            sm=sm+n-b
+        if b<=0:
+            sm=sm+n-1
+        print sm
+    i=i+1

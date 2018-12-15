@@ -1,0 +1,41 @@
+def fun(n,sav):
+    if n==1:
+        return 0
+    minimum=10000000
+    if n%3==0:
+        if sav[n/3]!=0:
+            a=sav[n/3]+1
+        else:
+            a=fun(n/3,sav)+1
+        if a<=minimum:
+            minimum=a
+    if n%2==0:
+        if sav[n/2]!=0:
+            a=sav[n/2]+1
+        else:
+            a=fun(n/2,sav)+1
+        if a<=minimum:
+            minimum=a
+    if sav[n-1]!=0:
+        a=sav[n/3]+1
+    else:
+        a=fun(n-1,sav)+1
+    if a<=minimum:
+        minimum=a
+    sav[n]=minimum
+    return sav[n]
+
+        
+t=input()
+i=0
+ans=[]
+while i<t:
+    n=input()
+    sav=[0]*1000005
+    mini=fun(n,sav)
+    ans.append(mini)
+    i=i+1
+i=0
+while i<t:
+    print ans[i]
+    i=i+1

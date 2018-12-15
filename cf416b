@@ -1,0 +1,40 @@
+x=raw_input().split(' ')
+m=int(x[0])
+n=int(x[1])
+arr = [[0 for x in xrange(n)] for x in xrange(m)]
+ans=[]
+i=0
+while i<m:
+    y=raw_input().split(' ')
+    j=0
+    while j<n:
+        arr[i][j]=int(y[j])
+        if i==0 and j>0:
+            arr[i][j]=arr[i][j]+arr[i][j-1]
+        if i!=0 and j!=n-1:
+            if j==0:
+                arr[i][j]=arr[i][j]+arr[i-1][j]
+            else:
+                if arr[i][j-1]>arr[i-1][j]:
+                    arr[i][j]=arr[i][j]+arr[i][j-1]
+                else:
+                    arr[i][j]=arr[i][j]+arr[i-1][j]
+        j=j+1
+    i=i+1
+sm=arr[0][n-1]
+ans.append(sm)
+i=1
+while i<m:
+    sm1=sm
+    j=0
+    while j<n-1:
+        if arr[i][j]>sm1:
+            sm=sm+arr[i][j]-sm1
+        j=j+1
+    sm=sm+arr[i][n-1]
+    ans.append(sm)
+    i=i+1
+i=0
+while i<m:
+    print ans[i],
+    i=i+1

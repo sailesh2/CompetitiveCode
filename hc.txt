@@ -1,0 +1,61 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <set>
+#include <vector>
+#include <iterator>
+using namespace std;
+
+
+int main() 
+{
+    long long int n,m,i,x,y,arr[1000000]={-1};
+    scanf("%lld%lld",&n,&m);
+    vector<set<long long int>> v;
+    for(i=0;i<m;i++)
+    {
+        scanf("%lld%lld",&x,&y);
+        if(arr[x]==0 && arr[y]==0)
+        {
+            n--;
+            set<long long int> myset;
+            myset.insert(x);
+            myset.insert(y);
+            v.push_back(myset);
+            arr[x]=arr[y]=v.size();
+        }
+        else if(arr[x]==-1)
+        {
+            n--;
+            v.at(arr[y]-1).insert(y);
+            arr[x]=arr[y];
+        }
+        else if(arr[y]==-1)
+        {
+            n--;
+            v.at(arr[x]-1).insert(x);
+            arr[y]=arr[x];
+        }
+        else
+        {
+            if(arr[x]!=arr[y])
+            {
+                n--;
+                set<long long int>::iterator it;
+                it=v.at(arr[y]-1).begin();
+                while(it!=v.at(arr[y]-1).end())
+                {
+                    arr[*it]=arr[x];
+                    v.at(arr[x]-1).insert(*it);
+                    it++;
+                }
+                //vector<set<long long int>>::iterator it1=
+            }
+        }
+        if(x>y)
+            printf("%lld\n",n);
+    }
+    return 0;
+}

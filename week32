@@ -1,0 +1,13 @@
+import math
+n=input()
+dig=int(math.floor(math.log(n,10)))+1
+arr=[]
+while n!=0:
+    arr.append(n%10)
+    n=n/10
+i=0
+am=0
+while i<dig:
+    am=am+arr[i]*(dig-i)*(((10**(i+1))-1)/9)
+    i=i+1
+print am%(10**9+7)

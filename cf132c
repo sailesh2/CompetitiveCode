@@ -1,0 +1,43 @@
+n=list(raw_input())
+i=0
+ctr=input()
+while i<len(n)-1:
+    if n[i]=='T' and n[i+1]=='F':
+        n[i]='F'
+        ctr=ctr-1
+    if n[i]=='T' and n[i+1]=='T':
+        i=i+2
+    else:
+        i=i+1
+if n[len(n)-2]=='F' and n[len(n)-1]=='T':
+    n[len(n)-1]='F'
+    ctr=ctr-1
+if ctr>0:
+    i=0
+    cnt=0
+    if len(n)==1 and ctr==1:
+        cnt=1
+    while i<len(n)-1:
+        if ctr==1:
+            cnt=1
+            break
+        if n[i]=='T' and n[i+1]=='T':
+            n[i]='F'
+            n[i+1]='F'
+            ctr=ctr-2
+        i=i+1
+    if cnt==1:
+        if n[len(n)-1]=='T':
+            n[len(n)-1]='F'
+        else:
+            n[len(n)-1]='T'
+i=0
+k=0
+s=1
+while i<len(n):
+    if n[i]=='F':
+        k=k+s
+    if n[i]=='T':
+        s=-1*s
+    i=i+1
+print k

@@ -1,0 +1,25 @@
+t=input()
+i=0
+ans=[]
+ans1=[]
+while i<t:
+    n=input()
+    x=raw_input().split(' ')
+    j=0
+    crr=[0]*100001
+    while j<n:
+        crr[int(x[j])]=crr[int(x[j])]+1
+        j=j+1
+    tot=(n*(n-1))/2
+    sm=0
+    j=1
+    while j<=n:
+        sm=sm+(crr[j]*(crr[j]-1))/2
+        j=j+1
+    ans.append(tot-sm)
+    ans1.append(sm)
+    i=i+1
+i=0
+while i<t:
+    print ans[i],ans1[i]
+    i=i+1

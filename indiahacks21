@@ -1,0 +1,55 @@
+n=input()
+i=0
+ans=[]
+while i<n:
+    x=list(raw_input())
+    y=list(raw_input())
+    j=0
+    cr=[0]*300
+    while j<len(x):
+       cr[ord(x[j])]=cr[ord(x[j])]+1
+       j=j+1
+    j=0
+    sm=0
+    cnt=0
+    save=0
+    while j<len(y):
+        if y[j] in x:
+            if cnt==0:
+                cnt=1
+                ctr=1
+                save=0
+                brr=list(y[j])
+            else:
+                if y[j] in brr:
+                    if brr.index(y[j])>=save:
+                        drr=brr[save:len(brr)]
+                        if drr.count(y[j])<=cr[ord(y[j])]:
+                            ctr=ctr+1
+                        else:
+                            save=brr.index(y[j])+1
+                            ctr=len(brr)-save+1
+                    else:
+                        ctr=ctr+1
+                    brr.append(y[j])
+                else:
+                    brr.append(y[j])
+                    ctr=ctr+1
+            if ctr==len(x):
+                sm=1
+                print brr
+                ans.append(1)
+                break
+        else:
+            cnt=0
+        j=j+1
+    if sm==0:
+        ans.append(0)
+    i=i+1
+i=0
+while i<n:
+    if ans[i]==1:
+        print "YES"
+    else:
+        print "NO"
+    i=i+1

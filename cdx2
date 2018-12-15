@@ -1,0 +1,21 @@
+import math
+t=input()
+i=0
+arr=[]
+while i<t:
+    n=input()
+    a=int(math.ceil(math.log(n,2)))
+    arr.append(2**a)
+    ctr=0
+    while n>1:
+        if n%2!=0:
+            break
+        ctr=ctr+1
+        n=n/2
+    arr.append(a-ctr)
+    i=i+1
+i=0
+while i<(2*t):
+    print arr[i],arr[i+1]
+    i=i+2
+    

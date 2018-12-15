@@ -1,0 +1,23 @@
+t=input()
+i=0
+ans=[]
+while i<t:
+    x=list(raw_input())
+    y=list(raw_input())
+    j=0
+    ctr=0
+    cr=[0]*300
+    while j<len(y):
+        if cr[ord(y[j])]==0 and y.count(y[j])>=x.count(y[j]):
+            cr[ord(y[j])]=1
+            ctr=ctr+x.count(y[j])
+        j=j+1
+    if ctr==len(x):
+        ans.append("YES")
+    else:
+        ans.append("NO")
+    i=i+1
+i=0
+while i<t:
+    print ans[i]
+    i=i+1

@@ -1,0 +1,24 @@
+t=input()
+j=0
+arr=[0]
+while j<t:
+    x=raw_input()
+    y=x.split(' ')
+    n=int(y[0])
+    r=int(y[1])
+    i=1
+    prod=1
+    prod1=1
+    while i<=r:
+         prod=prod*i
+         prod1=prod1*(n-r+i)
+         i=i+1
+    arr.append(prod1/prod)
+    j=j+1
+i=1
+while i<=t:
+    print arr[i]
+    i=i+1
+
+
+

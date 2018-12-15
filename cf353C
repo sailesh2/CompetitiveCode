@@ -1,0 +1,27 @@
+t=raw_input().split(' ')
+n=int(t[0])
+k=int(t[1])
+a=raw_input().split(' ')
+i=0
+min1=int(a[0])
+sum=0
+while i<n:
+    sum=sum+int(a[i])
+    if int(a[i])<=min1:
+        min1=int(a[i])
+        save=i
+    i=i+1
+j=0
+print sum
+ans=1
+while j<=k:
+    m=int(a[save])-j
+    while m>=1:
+        if (int(a[save])-j)%m==0:
+            if sum%m<=(n*k)%m:
+                if m>=ans:
+                    ans=m
+                break
+        m=m-1
+    j=j+1
+print ans

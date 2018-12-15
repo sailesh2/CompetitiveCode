@@ -1,0 +1,36 @@
+t=input()
+i=0
+ans=[]
+while i<t:
+    x=raw_input().split(' ')
+    n=int(x[0])
+    g=int(x[1])
+    y=raw_input().split(' ')
+    j=0
+    arr=[]
+    while j<n:
+        arr.append(int(y[j]))
+        j=j+1
+    arr.sort()
+    arr.reverse()
+    save=arr[0]
+    j=1
+    sm=arr[0]
+    p=arr[0]
+    while j<n:
+        if arr[j]<=p:
+            p=p-arr[j]
+        else:
+            sm=sm+arr[j]-p
+            p=arr[j]-p
+        j=j+1
+    print sm
+    if sm<=g:
+        ans.append("YES")
+    else:
+        ans.append("NO")
+    i=i+1
+i=0
+while i<t:
+    print ans[i]
+    i=i+1

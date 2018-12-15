@@ -1,0 +1,22 @@
+def range_prod(lo,hi):
+    if lo+1 < hi:
+        mid = (hi+lo)//2
+        return range_prod(lo,mid) * range_prod(mid+1,hi)
+    if lo == hi:
+        return lo
+    return lo*hi
+t=input()
+arr=[0]
+j=0
+while j<t:
+    x=raw_input()
+    y=x.split(' ')
+    n=int(y[0])
+    r=int(y[1])
+    cnt=range_prod(1,n)/(range_prod(1,r)*range_prod(1,n-r))
+    arr.append(cnt)
+    j=j+1
+i=1
+while i<=t:
+    print arr[i]
+    i=i+1

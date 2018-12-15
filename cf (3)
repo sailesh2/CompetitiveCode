@@ -1,0 +1,11 @@
+x=raw_input().split(' ')
+n=int(x[0])
+c=int(x[1])
+i=0
+arr=raw_input().split(' ')
+maxi=0
+while i<n-1:
+    if int(arr[i])-int(arr[i+1])>=maxi:
+        maxi=int(arr[i])-int(arr[i+1])
+    i=i+1
+print maxi-c

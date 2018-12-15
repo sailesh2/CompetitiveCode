@@ -1,0 +1,25 @@
+n=raw_input()
+n=n.split('|')
+a=n[0]
+a1=list(a)
+b=n[1]
+b1=list(b)
+x=list(raw_input())
+cnt=1
+if (len(a)+len(b)+len(x))%2==0:
+    mid=(len(a)+len(b)+len(x))/2
+    if len(a)<=mid and len(b)<=mid:
+        i=0
+        cnt=0
+        while i<(mid-len(a)):
+            a1.append(x[i])
+            i=i+1
+        j=0
+        while j<(mid-len(b)):
+            b1.append(x[i])
+            i=i+1
+            j=j+1
+if cnt==0:
+    print ''.join(a1)+'|'+''.join(b1)
+else:
+    print "Impossible"

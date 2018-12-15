@@ -1,0 +1,42 @@
+t=input()
+i=0
+ans=[]
+while i<t:
+    x=raw_input().split(' ')
+    n=int(x[0])
+    k=int(x[1])
+    arr=[0]*10000
+    arr[0]=1
+    j=1
+    p=1
+    s=1
+    while j<=k:
+        p=p*j
+        s=s*(k-(j-1))
+        arr[j]=s/p
+        print arr[j]
+        j=j+1
+    srr=[0]*10000
+    srr[0]=n
+    srr[1]=(n*(n+1))/2
+    j=2
+    while j<=k:
+        l=1
+        sm=srr[0]*n
+        print sm
+        while l<j:
+            sm=sm+srr[l]*(n*arr[l]-arr[l-1])
+            print sm
+            l=l+1
+        sm=sm+n
+        sm=sm/(1+j)
+        srr[j]=sm
+        print sm
+        j=j+1
+    ans.append(srr[k]%(10**9+7))
+    i=i+1
+i=0
+while i<t:
+    print ans[i]
+    i=i+1
+    

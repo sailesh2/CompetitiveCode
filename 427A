@@ -1,0 +1,17 @@
+n=input()
+x=raw_input().split(' ')
+i=0
+arr=[]
+ctr=0
+crm=0
+while i<n:
+    arr.append(int(x[i]))
+    if arr[i]==-1:
+        if ctr==0:
+            crm=crm+1
+        else:
+            ctr=ctr-1
+    else:
+        ctr=ctr+arr[i]
+    i=i+1
+print crm

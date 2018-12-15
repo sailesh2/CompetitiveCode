@@ -1,0 +1,11 @@
+while 1:
+    i=2
+    a=input()
+    x=[]
+    while i*i<=a:
+        if a%i==0:
+            x.append(i)
+        i+=1
+    print x
+
+        

@@ -1,0 +1,31 @@
+import math
+t=input()
+ans=[]
+rl=[0,1]
+i=2
+while i<=10000:
+    rl.append(float(rl[i-1])+float(1)/i)
+    i=i+1
+i=0
+while i<t:
+    n=input()
+    j=1
+    tot=0
+    while j<=n/2:
+        rem=n-j
+        prod=j*rem
+        root=int(math.ceil(prod**0.5))-1
+        s=int(math.ceil(prod*rl[root]))-(root*(root+1))/2
+        if j!=rem:
+            tot=tot+(s-root)*4+2*root
+        else:
+            tot=tot+(s-root)*2+root
+        j=j+1
+    ans.append(tot)
+    i=i+1
+i=0
+while i<t:
+    print ans[i]
+    i=i+1
+
+                

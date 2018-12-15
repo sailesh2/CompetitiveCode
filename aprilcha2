@@ -1,0 +1,31 @@
+import math
+n=input()
+k=0
+ans=[]
+while k<n:
+    x=raw_input().split(' ')
+    i=int(x[0])
+    m=i
+    j=int(x[1])
+    l=j
+    crr=list()
+    while i>=1:
+        crr.append(i)
+        if i%2==0:
+            i=i/2
+        else:
+            i=(i-1)/2
+    while j>=1:
+        if j in crr:
+            break
+        if j%2==0:
+            j=j/2
+        else:
+            j=(j-1)/2
+    ans.append(int(math.floor(math.log(m,2)))+int(math.floor(math.log(l,2)))-2*int(math.floor(math.log(j,2))))
+    k=k+1
+k=0
+while k<n:
+    print ans[k]
+    k=k+1
+    

@@ -1,0 +1,32 @@
+t=input()
+i=0
+ans=[]
+sq=0
+while i<t:
+    n=input()
+    x=raw_input().split(' ')
+    s=[]
+    j=0
+    sm=0
+    while j<n:
+        sm=sm^int(x[j])
+        s.append(sm)
+        j=j+1
+    q=input()
+    j=0
+    sq=sq+q
+    while j<q:
+        y=raw_input().split(' ')
+        a=int(y[0])
+        b=int(y[1])
+        if a==0:
+            ans.append(s[b])
+        else:
+            ans.append(s[b]^s[a-1])
+        j=j+1
+    i=i+1
+i=0
+while i<sq:
+    print ans[i]
+    i=i+1
+    

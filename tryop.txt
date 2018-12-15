@@ -1,0 +1,81 @@
+Flow 1:  0.14614Mbps
+
+Flow 2:  0.0925154Mbps
+
+Flow 3:  0.02726Mbps
+
+Flow 4:  0.33607Mbps
+
+Flow 5:  0.243952Mbps
+
+Flow 6:  0.105693Mbps
+
+Flow 7:  0.0520249Mbps
+
+Flow 8:  0.13842Mbps
+
+Flow 9:  0.121752Mbps
+
+Flow 10:  0.0273778Mbps
+
+Flow 11:  0.0711074Mbps
+
+Flow 12:  0.056751Mbps
+
+Flow 13:  0.0448882Mbps
+
+Flow 14:  0.12065Mbps
+
+Flow 15:  0.0737872Mbps
+
+Flow 16:  0.0584201Mbps
+
+Flow 17:  0.0267658Mbps
+
+Flow 18:  0.0231396Mbps
+
+Flow 19:  0.0493291Mbps
+
+Flow 20:  0.125439Mbps
+
+Flow 21:  0.0543036Mbps
+
+Flow 22:  0.129246Mbps
+
+Flow 23:  0.0419733Mbps
+
+Flow 24:  0.0383734Mbps
+
+Flow 25:  0.0460166Mbps
+
+Flow 26:  0.191281Mbps
+
+Flow 27:  0.145535Mbps
+
+Flow 28:  0.105757Mbps
+
+Flow 29:  0.044929Mbps
+
+Flow 30:  0.0734171Mbps
+
+Flow 31:  0.117585Mbps
+
+Flow 32:  0.0610181Mbps
+
+Flow 33:  0.0261957Mbps
+
+Flow 34:  0.0308992Mbps
+
+Flow 35:  0.0325284Mbps
+
+Flow 36:  0.127311Mbps
+
+Flow 37:  0.1408Mbps
+
+Flow 38:  0.0801719Mbps
+
+Flow 39:  0.0548171Mbps
+
+Flow 40:  0.169063Mbps
+
+TOTAL__THROUGHPUT  --  3.6527039Mbps

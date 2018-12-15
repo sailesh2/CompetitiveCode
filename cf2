@@ -1,0 +1,51 @@
+n=input()
+arr=[0]*1000000
+y=raw_input().split(' ')
+i=0
+x=[]
+while i<n:
+    x.append(int(y[i]))
+    i=i+1
+x.sort()
+if n==1:
+    print -1
+elif n==2:
+    di=int(x[1])-int(x[0])
+    if di%2==0:
+        print 3
+        print int(x[0])-di,(int(x[0])+int(x[1]))/2,int(x[1])+di
+    else:
+        print 2
+        print int(x[0])-di,int(x[1])+di
+else:
+    max=0
+    i=1
+    while i<n:
+        arr[int(x[i])-int(x[i-1])]=arr[int(x[i])-int(x[i-1])]+1
+        if arr[int(x[i])-int(x[i-1])]>=max:
+            max=arr[int(x[i])-int(x[i-1])]
+            di=int(x[i])-int(x[i-1])
+        i=i+1
+    i=1
+    cnt=0
+    while i<n:
+        if (int(x[i])-int(x[i-1]))!=di:
+            if cnt==0:
+                j=i
+                save=int(x[i])-int(x[i-1])
+            cnt=cnt+1
+        i=i+1
+    if cnt==0:
+        print 2
+        print int(x[0])-di,int(x[n-1])+di
+    elif cnt==1:
+        if save==(2*di):
+            print 1
+            print int(x[j-1])+di
+        else:
+            print 0
+    else:
+        print 0
+
+                                   
+    

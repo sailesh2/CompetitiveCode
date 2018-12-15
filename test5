@@ -1,0 +1,7 @@
+n=raw_input()
+x=n.split()
+cntr=0
+for i in x:
+    if i[::-1]==i:
+        cntr=cntr+1
+print cntr

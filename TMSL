@@ -1,0 +1,63 @@
+t=input()
+ans=[]
+i=0
+while i<t:
+    x=raw_input().split(' ')
+    n=int(x[0])
+    a=int(x[1])
+    b=int(x[2])
+    c=int(x[3])
+    d=int(x[4])
+    l=0
+    r=0
+    s=0
+    ctr=0
+    ctr2=0
+    arr=[[]]*10000000
+    crr=[0]*10000000
+    k=0
+    while 1:
+        if ctr==n:
+            break
+        if ctr==0:
+            s=d
+            arr[k].append(s)
+        else:
+            s=(a*s*s+b*s+c)
+            if s>=1000000:
+                s=s%1000000
+                crr[k]=ctr2
+                ctr2=0
+                k=k+1
+            arr[k].append(s)
+        ctr=ctr+1
+        ctr2=ctr2+1
+    crr[k]=ctr2
+    ctr=0
+    while 1:
+        j=0
+        cnt=0
+        maxi=0
+        save=-1
+        while j<=k:
+            if crr[j]>0:
+                if arr[j][crr[j]-1]>=maxi:
+                       maxi=arr[j][crr[j]-1]
+                       save=j
+                cnt=1
+            j=j+1
+        if cnt==0:
+            break
+        if ctr%2==0:
+            l=l+maxi
+        else:
+            r=r+maxi
+        crr[save]=crr[save]-1
+        ctr=ctr+1
+    ans.append(abs(l-r))
+    i=i+1
+i=0
+while i<t:
+    print ans[i]
+    i=i+1
+    

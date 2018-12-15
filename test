@@ -1,0 +1,18 @@
+import math
+n=input()
+prod=1
+i=1
+ctr=0
+while i<=n:
+    prod=prod*i
+    i=i+1
+y=prod+1
+print y*prod
+while 1:
+    x=math.floor((prod*y)/(y-prod))
+    if x<(prod+1):
+        break
+    if(prod*y)%(y-prod)==0:
+        ctr=ctr+1
+    y=y+1
+print (ctr%1000007)    

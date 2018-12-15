@@ -1,0 +1,20 @@
+n=raw_input()
+n=n.split(' ')
+a=int(n[0])
+b=int(n[1])
+y=raw_input()
+x=y.split(' ')
+i=0
+arr=[]
+while i<a:
+    arr.append(int(x[i]))
+    i=i+1
+arr.sort()
+i=0
+s=0
+while i<a:
+    s=s+arr[i]
+    if(s>b):
+        break
+    i=i+1
+print i

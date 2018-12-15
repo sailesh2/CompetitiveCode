@@ -1,0 +1,102 @@
+#include<stdio.h>
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,m,i,j,k,cnt;
+    cin>>n>>m;
+    int arr[n][m],brr[n][m],crr[n][m];
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            cnt=0;
+            for(k=0;k<m;k++)
+            {
+                if(arr[i][k]==0)
+                {
+                    cnt=1;
+                    break;
+                }
+            }
+            for(k=0;k<n;k++)
+            {
+                if(arr[k][j]==0)
+                {
+                    cnt=1;
+                    break;
+                }
+            }
+            if(cnt==0)
+                brr[i][j]=1;
+            else
+                brr[i][j]=0;
+        }
+    }
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            cnt=0;
+            for(k=0;k<m;k++)
+            {
+                if(brr[i][k]==1)
+                {
+                    cnt=1;
+                    break;
+                }
+            }
+            for(k=0;k<n;k++)
+            {
+                if(brr[k][j]==1)
+                {
+                    cnt=1;
+                    break;
+                }
+            }
+            if(cnt==1)
+                crr[i][j]=1;
+            else
+                crr[i][j]=0;
+        }
+    }
+    cnt=0;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            if(arr[i][j]!=crr[i][j])
+            {
+                cnt=1;
+                break;
+            }
+        }
+        if(cnt==1)
+            break;
+    }
+    if(cnt==0)
+    {
+        cout<<"YES\n";
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                cout<<brr[i][j]<<" ";
+            }
+            cout<<"\n";
+        }
+    }
+    else
+        cout<<"NO\n";
+    return 0;
+}

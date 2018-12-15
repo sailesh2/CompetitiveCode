@@ -1,0 +1,121 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int n,a,b;
+    cin>>n>>a>>b;
+    string s;
+    int ans=0;
+    cin>>s;
+    int ctr=0;
+    for(int i=0;i<s.length();i++){
+        if(s[i]=='*'){
+            if(ctr>0){
+                if(ctr%2==0){
+                    if(a-ctr/2>=0){
+                        a=a-ctr/2;
+                        ans=ans+ctr/2;
+                    }else{
+                        ans=ans+a;
+                        a=0;
+                    }
+                    if(b-ctr/2>=0){
+                        b=b-ctr/2;
+                        ans=ans+ctr/2;
+                    }else{
+                        ans=ans+b;
+                        b=0;
+                    }
+                }else{
+                    if(a>b){
+                        if(a-ctr/2-1>=0){
+                            a=a-ctr/2-1;
+                            ans=ans+ctr/2+1;
+                        }else{
+                            ans=ans+a;
+                            a=0;
+                        }
+                        if(b-ctr/2>=0){
+                            b=b-ctr/2;
+                            ans=ans+ctr/2;
+                        }else{
+                            ans=ans+b;
+                            b=0;
+                        }
+                    }else{
+                        if(b-ctr/2-1>=0){
+                            b=b-ctr/2-1;
+                            ans=ans+ctr/2+1;
+                        }else{
+                            ans=ans+b;
+                            b=0;
+                        }
+                        if(a-ctr/2>=0){
+                            a=a-ctr/2;
+                            ans=ans+ctr/2;
+                        }else{
+                            ans=ans+a;
+                            a=0;
+                        }
+                    }
+                }
+            }
+            ctr=0;
+        }else{
+            ctr++;
+        }
+    }
+    if(ctr>0){
+        if(ctr%2==0){
+            if(a-ctr/2>=0){
+                a=a-ctr/2;
+                ans=ans+ctr/2;
+            }else{
+                ans=ans+a;
+                a=0;
+            }
+            if(b-ctr/2>=0){
+                b=b-ctr/2;
+                ans=ans+ctr/2;
+            }else{
+                ans=ans+b;
+                b=0;
+            }
+        }else{
+            if(a>b){
+                if(a-ctr/2-1>=0){
+                    a=a-ctr/2-1;
+                    ans=ans+ctr/2+1;
+                }else{
+                    ans=ans+a;
+                    a=0;
+                }
+                if(b-ctr/2>=0){
+                    b=b-ctr/2;
+                    ans=ans+ctr/2;
+                }else{
+                    ans=ans+b;
+                    b=0;
+                }
+            }else{
+                if(b-ctr/2-1>=0){
+                    b=b-ctr/2-1;
+                    ans=ans+ctr/2+1;
+                }else{
+                    ans=ans+b;
+                    b=0;
+                }
+                if(a-ctr/2>=0){
+                    a=a-ctr/2;
+                    ans=ans+ctr/2;
+                }else{
+                    ans=ans+a;
+                    a=0;
+                }
+            }
+        }
+    }
+    cout<<ans;
+    return 0;
+}

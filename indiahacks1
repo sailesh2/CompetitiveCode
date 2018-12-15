@@ -1,0 +1,16 @@
+n=input()
+x=raw_input().split(' ')
+i=0
+arr=[]
+while i<n:
+    arr.append(int(x[i]))
+    i=i+1
+arr.sort()
+arr.reverse()
+i=0
+maxi=0
+while i<n:
+    if i+2+arr[i]-1>=maxi:
+        maxi=i+2+arr[i]-1
+    i=i+1
+print maxi+1

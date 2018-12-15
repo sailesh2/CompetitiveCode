@@ -1,0 +1,18 @@
+import math
+t=input()
+i=0
+while i<t:
+    n,m=map(int,raw_input().split())
+    s=0
+    j=1
+    cnt=0
+    while j<=n:
+        p=n/j
+        k=n/p
+        l=j-1
+        q=(((k)*(k+1)*(6*k*k*k+9*k*k+k-1))/30-((l)*(l+1)*(6*(l)*(l)*(l)+9*(l)*(l)+(l-1)))/30)
+        s=s+q*p
+        j=k+1
+        cnt+=1
+    print s%m
+    i=i+1

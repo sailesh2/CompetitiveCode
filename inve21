@@ -1,0 +1,23 @@
+t=input()
+i=0
+ans=[]
+while i<t:
+    x=raw_input().split(' ')
+    n=int(x[0])
+    p=int(x[1])
+    p1=1
+    p2=1
+    sm=1
+    j=1
+    while j<=p:
+        p1=p1*(n-(j-1))
+        p2=p2*j
+        sm=sm+(p1/p2)
+        j=j+1
+    ans.append(sm%1000000007)
+    i=i+1
+i=0
+while i<t:
+    print ans[i]
+    i=i+1
+    

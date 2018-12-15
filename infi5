@@ -1,0 +1,23 @@
+import math
+n=input()
+i=0
+while i<n:
+    ctr=0
+    lt=list()
+    x=raw_input().split(' ')
+    rm=int(x[0])
+    a=int(x[1])
+    st=a
+    while lt.count(st)==0:
+        lt.append(st)
+        ctr=ctr+1
+        if st>0:
+            st=2*st
+            if st>rm:
+                st=-1*rm+(st-rm-1)
+        else:
+            st=2*st
+            if abs(st)>rm:
+                st=rm-(abs(st)-rm-1)
+    print 2*rm-ctr
+    i=i+1

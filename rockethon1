@@ -1,0 +1,17 @@
+a=list(raw_input())
+save=0
+i=0
+cnt=0
+ctr=0
+while i<len(a):
+    if a[i]==a[save]:
+       ctr=ctr+1
+    else:
+        if ctr%2==0:
+            cnt=cnt+1
+        save=i
+        ctr=1
+    i=i+1
+if ctr%2==0:
+    cnt=cnt+1
+print cnt

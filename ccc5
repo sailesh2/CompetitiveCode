@@ -1,0 +1,26 @@
+k=input()
+n=2**k
+c=1
+p=1
+ctr=0
+arr=[0]*(n+1)
+brr=[0]*(n+1)
+modl=10**9+9
+i=n-1
+while i>=1:
+    c=(c%modl*(n/2-ctr)%modl)%modl
+    if ctr==0:
+        p=1
+    else:
+        p=(p%modl*ctr%modl)%modl
+    ctr=ctr+1
+    arr[i]=c
+    brr[n-i]=p
+    i=i-1
+arr[n]=1
+brr[n]=(brr[n-1]%modl*(n-1)%modl)%modl
+i=1
+while i<=n:
+    ans=(arr[i]%modl*brr[i]%modl*n%modl)%modl
+    print ans
+    i=i+1

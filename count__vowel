@@ -1,0 +1,8 @@
+inp=raw_input('enter a string hm')
+ctr=0
+itr=0
+while itr<len(inp):
+    if inp[itr]=='a' or inp[itr]=='e' or inp[itr]=='i' or inp[itr]=='o' or inp[itr]=='u':
+        ctr=ctr+1
+    itr=itr+1
+print ctr    

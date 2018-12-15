@@ -1,0 +1,21 @@
+from __future__ import print_function
+n=input()
+a=(n/2+n%2)*(n/2+n%2)+(n/2)*(n/2)
+print(a)
+i=1
+while i<=n:
+    j=1
+    while j<=n:
+        if i%2==0:
+            if j%2==0:
+                print("C",end='')
+            else:
+                print(".",end='')
+        else:
+            if j%2!=0:
+                print("C",end='')
+            else:
+                print(".",end='')
+        j=j+1
+    print('')
+    i=i+1

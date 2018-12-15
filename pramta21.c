@@ -1,0 +1,205 @@
+#include<stdio.h>
+
+int main()
+{
+    int i,j,n,q;
+    scanf("%d",&n);
+
+    scanf("%d",&q);
+
+    long long int arro[n],arre[n],brro[n],brre[n];
+    int ako=0,ake=0,bko=0,bke=0,idx,val,a,l,r;
+    long long int sum,sum2,sum3;
+    for(i=0;i<n;i++)
+    {
+        if(i%2!=0)
+        {
+            scanf("%lld",&arro[ako]);
+            ako++;
+        }
+        else
+        {
+            scanf("%lld",&arre[ake]);
+            ake++;
+        }
+    }
+
+    for(i=0;i<n;i++)
+    {
+        if(i%2!=0)
+        {
+            scanf("%lld",&brro[bko]);
+            bko++;
+        }
+        else
+        {
+            scanf("%lld",&brre[bke]);
+            bke++;
+        }
+    }
+    for(i=1;i<ako;i++)
+    {
+        arro[i]=arro[i]+arro[i-1];
+    }
+
+    for(i=1;i<ake;i++)
+    {
+        arre[i]=arre[i]+arre[i-1];
+    }
+
+    for(i=1;i<bko;i++)
+    {
+        brro[i]=brro[i]+brro[i-1];
+    }
+
+    for(i=1;i<bke;i++)
+    {
+        brre[i]=brre[i]+brre[i-1];
+    }
+
+    for(i=0;i<q;i++)
+    {
+        scanf("%d%d%d",&a,&l,&r);
+        l--;
+        r--;
+        if(a==1)
+        {
+                            if(l%2!=0)
+                            {
+                                idx=l/2-1;
+                                sum = 0;
+                                if(idx>=0)
+                                {
+                                   sum=arro[idx];
+                                }
+                                if(r%2==0)
+                                {
+                                    sum=arro[(r-1)/2]-sum;
+                                }
+                                else
+                                {
+                                    sum=arro[r/2]-sum;
+                                }
+
+                                idx=(l+1)/2-1;
+                                sum2=0;
+                                if(idx>=0)
+                                {
+                                    sum2=brre[idx];
+                                }
+                                if(r%2!=0)
+                                {
+                                    sum2=brre[(r-1)/2]-sum2;
+                                }
+                                else
+                                {
+                                    sum2=brre[r/2]-sum2;
+                                }
+                                printf("%lld\n",sum+sum2);
+                            }
+                            else
+                            {
+                                //printf("sdf");
+                                idx=l/2-1;
+                                sum=0;
+                                if(idx>=0)
+                                {
+                                    sum=arre[idx];
+                                }
+                                if(r%2!=0)
+                                {
+                                    sum=arre[(r-1)/2]-sum;
+                                }
+                                else
+                                {
+                                    sum=arre[r/2]-sum;
+                                }
+                                //printf("   %lld  ",sum);
+                                idx=(l+1)/2-1;
+                                sum2=0;
+                                if(idx>=0)
+                                {
+                                    sum2=brro[idx];
+                                }
+                                if(r%2==0)
+                                {
+                                    sum2=brro[(r-1)/2]-sum2;
+                                }
+                                else
+                                {
+                                    sum2=brro[r/2]-sum2;
+                                }
+                                printf("%lld\n",sum+sum2);
+                            }
+        }
+        else
+        {
+                                if(l%2!=0)
+                                {
+                                    idx=l/2-1;
+                                    sum = 0;
+                                    if(idx>=0)
+                                    {
+                                       sum=brro[idx];
+                                    }
+                                    if(r%2==0)
+                                    {
+                                        sum=brro[(r-1)/2]-sum;
+                                    }
+                                    else
+                                    {
+                                        sum=brro[r/2]-sum;
+                                    }
+
+                                    idx=(l+1)/2-1;
+                                    sum2=0;
+                                    if(idx>=0)
+                                    {
+                                        sum2=arre[idx];
+                                    }
+                                    if(r%2!=0)
+                                    {
+                                        sum2=arre[(r-1)/2]-sum2;
+                                    }
+                                    else
+                                    {
+                                        sum2=arre[r/2]-sum2;
+                                    }
+                                    printf("%lld\n",sum+sum2);
+                                }
+                                else
+                                {
+                                    sum=0;
+                                    idx=l/2-1;
+                                    if(idx>=0)
+                                    {
+                                        sum=brre[idx];
+                                    }
+                                    if(r%2!=0)
+                                    {
+                                        sum=brre[(r-1)/2]-sum;
+                                    }
+                                    else
+                                    {
+                                        sum=brre[r/2]-sum;
+                                    }
+                                    sum2=0;
+                                    idx=(l+1)/2-1;
+                                    if(idx>=0)
+                                    {
+                                        sum2=arro[idx];
+                                    }
+                                    if(r%2==0)
+                                    {
+                                        sum2=arro[(r-1)/2]-sum2;
+                                    }
+                                    else
+                                    {
+                                        sum2=arro[r/2]-sum2;
+                                    }
+                                    printf("%lld\n",sum+sum2);
+                                }
+        }
+    }
+    return 0;
+}
